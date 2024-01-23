@@ -1,5 +1,5 @@
-RegisterServerEvent('ServerResponse')
-AddEventHandler('ServerResponse', function()
+RegisterServerEvent('vanishdev:recievetreatment')
+AddEventHandler('vanishdev:recievetreatment', function()
     local _source = source
     local price = Config.treatmentCost 
     
