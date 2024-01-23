@@ -15,7 +15,7 @@ AddEventHandler('vanishdev:recievetreatment', function()
         end
     end
 
-    if amount > 3 then
+    if amount > Config.EMSAvailability then
         ShowNotification("There is EMS online, you cannot check in.", Config.notificationType)
     else
         if xPlayer.getAccount('bank').money >= price then
