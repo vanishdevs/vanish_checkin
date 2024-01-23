@@ -6,6 +6,9 @@ Config.location = vector3(311.4203, -594.0041, 42.2841)
 -- The heading (rotation) of the ped model at the treatment location
 Config.heading = 339.7307
 
+-- The amount of medics/ems that have to be online in order for this system to not work
+Config.EMSAvailability = 3
+
 -- Cost of treatment in game currency (e.g., dollars)
 Config.treatmentCost = 250000
 
