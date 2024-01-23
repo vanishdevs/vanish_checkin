@@ -30,7 +30,7 @@ Citizen.CreateThread(function()
 
             if IsControlJustPressed(1, 38) then
                 if GetEntityHealth(PlayerPedId()) < 200 then
-                    TriggerServerEvent('ServerResponse')
+                    TriggerServerEvent('vanishdev:recievetreatment')
                     Citizen.Wait(Config.healingCooldown)
                     textVisible = false
                 else
