@@ -19,7 +19,8 @@ Citizen.CreateThread(function()
 
     while true do
         Citizen.Wait(0)
-        local playerCoords = GetEntityCoords(PlayerPedId())
+        local player = PlayerPedId()
+        local playerCoords = GetEntityCoords(player)
         local distance = GetDistanceBetweenCoords(playerCoords, Config.location.x, Config.location.y, Config.location.z, true)
 
         if distance <= 4.0 then
@@ -29,7 +30,7 @@ Citizen.CreateThread(function()
             end
 
             if IsControlJustPressed(1, 38) then
-                if GetEntityHealth(PlayerPedId()) < 200 then
+                if GetEntityHealth(player) < 200 then
                     TriggerServerEvent('vanishdev:recievetreatment')
                     Citizen.Wait(Config.healingCooldown)
                     textVisible = false
