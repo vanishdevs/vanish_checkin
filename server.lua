@@ -1,10 +1,7 @@
 RegisterServerEvent('vanishdev:recievetreatment')
-AddEventHandler('vanishdev:recievetreatment', function()
+AddEventHandler('vanishdev:recievetreatment', function(price)
     local _source = source
-    local price = Config.treatmentCost 
-    
-    local xPlayer = ESX.GetPlayerFromId(_source)
-    
+    local xPlayer = ESX.GetPlayerFromId(_source)  
     local xPlayers = ESX.GetPlayers()
     local amount = 0
     
