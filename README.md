@@ -27,6 +27,7 @@ The script is customizable through the `config.lua` file. Adjust the following p
 
 - `location`: The coordinates of the treatment location (vector3).
 - `heading`: The heading (rotation) of the ped model at the treatment location.
+- `EMSAvailability`: Amount of EMS that have to be online for this system to not heal players and seek medical attention from those online.
 - `treatmentCost`: Cost of treatment in in-game currency.
 - `healingCooldown`: Cooldown period between consecutive treatments.
 - `pedModel`: Model of the ped NPC providing the treatment.
