@@ -2,11 +2,9 @@ Config = {}
 
 -- The location where the treatment takes place (using vector3 for coordinates)
 Config.location = {
-    vector3(311.4203, -594.0041, 42.2841),
+    vector4(311.4203, -594.0041, 42.2841, 339.7307),
     -- Add more coordinates here, make sure to have the proper syntax
 }
--- The heading (rotation) of the ped model at the treatment location
-Config.heading = 339.7307
 
 -- The amount of medics/ems that have to be online in order for this system to not work
 Config.EMSAvailability = 3
