@@ -18,22 +18,17 @@ Config.healingCooldown = 15000 -- 15 seconds
 -- The model of the ped NPC providing the treatment
 Config.pedModel = "s_m_m_doctor_01"
 
--- Type of notification system used for displaying messages (e.g., "pNotify", "chat", etc.)
-Config.notificationType = "pNotify"
+-- Type of notification system used for displaying messages (e.g., "esx", "chat", etc.)
+Config.notificationType = "esx"
 
 -- Function to show notifications to players
 function ShowNotification(message, type)
     -- Check the type of notification and trigger the appropriate client event
-    if type == "pNotify" then
-        TriggerClientEvent("pNotify:SendNotification", source, {
-            text = message,
-            type = "alert",
-            timeout = 5000,
-            layout = "centerLeft"
-        })
+    if type == "esx" then
+        TriggerEvent("esx:showNotification", message)
     elseif type == "chat" then
         -- Display a message in the in-game chat
-        TriggerClientEvent("chatMessage", source, "SYSTEM", {255, 0, 0}, message)
+        TriggerEvent("chatMessage", source, "SYSTEM", {255, 0, 0}, message)
     else
         -- Add conditions for other notification systems if needed
         -- For example, you could add support for a custom UI notification system here
