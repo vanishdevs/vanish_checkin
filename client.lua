@@ -12,18 +12,28 @@ Citizen.CreateThread(function()
         Wait(500)
     end
 
-    local ped = CreatePed(4, GetHashKey(Config.pedModel), Config.location.x, Config.location.y, Config.location.z, Config.heading, false, true)
-    FreezeEntityPosition(ped, true)
-    SetEntityInvincible(ped, true)
-    SetBlockingOfNonTemporaryEvents(ped, true)
+    for _, coords in pairs(Config.location) do
+        local ped = CreatePed(4, GetHashKey(Config.pedModel), coords.x, coords.y, coords.z, coords.h, false, true)
+        FreezeEntityPosition(ped, true)
+        SetEntityInvincible(ped, true)
+        SetBlockingOfNonTemporaryEvents(ped, true)
+    end
 
     while true do
         Citizen.Wait(0)
         local player = PlayerPedId()
         local playerCoords = GetEntityCoords(player)
-        local distance = GetDistanceBetweenCoords(playerCoords, Config.location.x, Config.location.y, Config.location.z, true)
+        local nearestDistance = nil
 
-        if distance <= 4.0 then
+        for _, coords in pairs(Config.location) do
+            local distance = GetDistanceBetweenCoords(playerCoords, coords.x, coords.y, coords.z, true)
+
+            if nearestDistance == nil or distance < nearestDistance then
+                nearestDistance = distance
+            end
+        end
+
+        if nearestDistance ~= nil and nearestDistance <= 4.0 then
             if not textVisible then
                 ShowInfo(("Press ~INPUT_VEH_HORN~ to be treated ~r~(~h~~g~$%s~r~)"):format(Config.treatmentCost))
                 textVisible = true 
