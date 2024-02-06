@@ -1,6 +1,6 @@
 Config = {}
 
--- The location where the treatment takes place (using vector3 for coordinates)
+-- The location where the treatment takes place (using vector4 for coordinates)
 Config.location = {
     vector4(311.4203, -594.0041, 42.2841, 339.7307),
     -- Add more coordinates here, make sure to have the proper syntax
