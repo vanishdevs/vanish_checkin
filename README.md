@@ -25,8 +25,7 @@ This script adds a medical treatment functionality to your FiveM server, allowin
 
 The script is customizable through the `config.lua` file. Adjust the following parameters to suit your server:
 
-- `location`: The coordinates of the treatment location (vector3).
-- `heading`: The heading (rotation) of the ped model at the treatment location.
+- `location`: The coordinates of the treatment location (vector4).
 - `EMSAvailability`: Amount of EMS that have to be online for this system to not heal players and seek medical attention from those online.
 - `treatmentCost`: Cost of treatment in in-game currency.
 - `healingCooldown`: Cooldown period between consecutive treatments.
@@ -43,7 +42,7 @@ The script supports different notification systems. Customize the `ShowNotificat
 
 ## Credits
 
-- [ESX Framework](https://github.com/ESX-Org/es_extended): Used for player-related functions.
+- [ESX Framework](https://github.com/esx-framework/esx-core): Used for player-related functions.
 
 ## License
 
