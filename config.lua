@@ -12,9 +12,6 @@ Config.EMSAvailability = 3
 -- Cost of treatment in game currency (e.g., dollars)
 Config.treatmentCost = 250000
 
--- Cooldown period in milliseconds before a player can receive treatment again
-Config.healingCooldown = 15000 -- 15 seconds
-
 -- The model of the ped NPC providing the treatment
 Config.pedModel = "s_m_m_doctor_01"
 
