@@ -43,7 +43,6 @@ Citizen.CreateThread(function()
             if IsControlJustPressed(1, 38) then
                 if GetEntityHealth(player) < 200 then
                     TriggerServerEvent('vanishdev:recievetreatment', Config.treatmentCost)
-                    Citizen.Wait(Config.healingCooldown)
                     textVisible = false
                 else
                     ShowNotification("You don't need treatment.", Config.notificationType)
