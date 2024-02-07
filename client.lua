@@ -13,7 +13,7 @@ Citizen.CreateThread(function()
     end
 
     for _, coords in pairs(Config.location) do
-        local ped = CreatePed(4, GetHashKey(Config.pedModel), coords.x, coords.y, coords.z, coords.h, false, true)
+        local ped = CreatePed(4, GetHashKey(Config.pedModel), coords.x, coords.y, coords.z, coords.w, false, true)
         FreezeEntityPosition(ped, true)
         SetEntityInvincible(ped, true)
         SetBlockingOfNonTemporaryEvents(ped, true)
@@ -26,9 +26,10 @@ Citizen.CreateThread(function()
         local nearestDistance = nil
 
         for _, coords in pairs(Config.location) do
-            local distance = #(playerCoords - coords)
-
-            if nearestDistance == nil or distance < nearestDistance then
+            local specifiedVector = vector3(coords[1], coords[2], coords[3])
+            local distance = #(playerCoords - specifiedVector)
+        
+            if not nearestDistance or distance < nearestDistance then
                 nearestDistance = distance
             end
         end
