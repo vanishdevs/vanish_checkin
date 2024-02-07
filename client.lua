@@ -26,7 +26,7 @@ Citizen.CreateThread(function()
         local nearestDistance = nil
 
         for _, coords in pairs(Config.location) do
-            local distance = GetDistanceBetweenCoords(playerCoords, coords.x, coords.y, coords.z, true)
+            local distance = #(playerCoords - coords)
 
             if nearestDistance == nil or distance < nearestDistance then
                 nearestDistance = distance
