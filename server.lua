@@ -46,7 +46,7 @@ AddEventHandler('vanishdev:recievetreatment', function(price)
             end
         end
     else
-        TriggerClientEvent('vanishdev:standalonerevive', _source)
+        TriggerClientEvent('vanishdev:standalonerevive', _source, Config.standalonerespawn)
         ShowNotification("You have been treated.", Config.notificationType)
     end
 end)
