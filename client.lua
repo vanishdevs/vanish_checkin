@@ -1,3 +1,12 @@
+RegisterNetEvent('vanishdev:standalonerevive')
+AddEventHandler('vanishdev:standalonerevive', function(player, coords)
+    SetEntityCoordsNoOffset(player, coords.x, coords.y, coords.z, false, false, false, true)
+	NetworkResurrectLocalPlayer(coords.x, coords.y, coords.z, coords.w, true, false) 
+	SetPlayerInvincible(player, false) 
+	TriggerEvent('playerSpawned', coords.x, coords.y, coords.z, coords.w)
+    ClearPedBloodDamage(player)
+end)
+
 function ShowInfo(text)
     SetTextComponentFormat("STRING")
     AddTextComponentString(text)
