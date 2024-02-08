@@ -6,11 +6,14 @@ Config.Framework = 'ESX'
 -- If you want to use a targetting system, set this to true, this will make you be able to interact with the ped (ox_target only)
 Config.UseTarget = false
 
--- The location where the treatment takes place (using vector4 for coordinates)
+-- The location where the ped is spawed for you to interact with (using vector4 for coordinates)
 Config.location = {
     vector4(311.4203, -594.0041, 42.2841, 339.7307),
     -- Add more coordinates here, make sure to have the proper syntax
 }
+
+-- If you chose to make this script standalone, define where you want to respawn when you recieve treatment (ignore if you are using framework)
+Config.standalonerespawn = vector4(311.4203, -594.0041, 42.2841, 339.7307)
 
 -- The amount of medics/ems that have to be online in order for this system to not work
 Config.EMSAvailability = 3
