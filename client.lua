@@ -6,14 +6,16 @@ end
 
 Citizen.CreateThread(function()
     local textVisible = false
-    RequestModel(Config.pedModel)
+    local pedModel = `s_m_m_doctor_01`
+        
+    RequestModel(pedModel)
 
-    while not HasModelLoaded(Config.pedModel) do
+    while not HasModelLoaded(pedModel) do
         Wait(500)
     end
 
     for _, coords in pairs(Config.location) do
-        local ped = CreatePed(4, GetHashKey(Config.pedModel), coords.x, coords.y, coords.z - 1, coords.w, false, true)
+        local ped = CreatePed(4, pedModel, coords.x, coords.y, coords.z - 1, coords.w, false, true)
         FreezeEntityPosition(ped, true)
         SetEntityInvincible(ped, true)
         SetBlockingOfNonTemporaryEvents(ped, true)
@@ -28,7 +30,7 @@ Citizen.CreateThread(function()
                     end
                 },
             }
-            exports.ox_target:addLocalEntity(GetHashKey(Config.pedModel), options)
+            exports.ox_target:addLocalEntity(pedModel, options)
         end
     end
 
