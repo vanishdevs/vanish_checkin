@@ -13,7 +13,7 @@ Citizen.CreateThread(function()
     end
 
     for _, coords in pairs(Config.location) do
-        local ped = CreatePed(4, GetHashKey(Config.pedModel), coords.x, coords.y, coords.z, coords.w, false, true)
+        local ped = CreatePed(4, GetHashKey(Config.pedModel), coords.x, coords.y, coords.z - 1, coords.w, false, true)
         FreezeEntityPosition(ped, true)
         SetEntityInvincible(ped, true)
         SetBlockingOfNonTemporaryEvents(ped, true)
