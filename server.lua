@@ -1,5 +1,5 @@
 local function CheckVersion()
-    PerformHttpRequest('https://github.com/2zVanish/vanish-checkin/blob/main/version.txt', function(err, text, headers)
+    PerformHttpRequest('https://raw.githubusercontent.com/2zVanish/vanish-checkin/main/version.txt', function(err, text, headers)
         local currentVersion = GetResourceMetadata(GetCurrentResourceName(), 'version')
 
         if not text then
