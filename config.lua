@@ -1,5 +1,8 @@
 Config = {}
 
+-- If you want to use a targetting system, set this to true, this will make you be able to interact with the ped (ox_target only)
+Config.UseTarget = false
+
 -- The location where the treatment takes place (using vector4 for coordinates)
 Config.location = {
     vector4(311.4203, -594.0041, 42.2841, 339.7307),
@@ -11,9 +14,6 @@ Config.EMSAvailability = 3
 
 -- Cost of treatment in game currency (e.g., dollars)
 Config.treatmentCost = 250000
-
--- The model of the ped NPC providing the treatment
-Config.pedModel = "s_m_m_doctor_01"
 
 -- Type of notification system used for displaying messages (e.g., "esx", "chat", etc.)
 Config.notificationType = "esx"
