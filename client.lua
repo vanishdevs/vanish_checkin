@@ -30,7 +30,7 @@ Citizen.CreateThread(function()
                     end
                 },
             }
-            exports.ox_target:addLocalEntity(pedModel, options)
+            exports.ox_target:addLocalEntity(ped, options)
         end
     end
 
