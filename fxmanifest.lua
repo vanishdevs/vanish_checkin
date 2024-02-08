@@ -1,5 +1,6 @@
 fx_version 'adamant'
 game 'gta5'
+lua54 'yes'
 
 author 'vanishdev'
 description 'Simple ESX Check-in system to revive players'
