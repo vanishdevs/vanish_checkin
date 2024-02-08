@@ -17,9 +17,22 @@ Citizen.CreateThread(function()
         FreezeEntityPosition(ped, true)
         SetEntityInvincible(ped, true)
         SetBlockingOfNonTemporaryEvents(ped, true)
+        if Config.UseTarget then
+            local options = {
+                {
+                    label = 'Check-in',
+                    icon = 'fa-regular fa-hospital',
+                    distance = 3.0,
+                    onSelect = function()
+                       TriggerServerEvent('vanishdev:recievetreatment', Config.treatmentCost)
+                    end
+                },
+            }
+            exports.ox_target:addLocalEntity(GetHashKey(Config.pedModel), options)
+        end
     end
 
-    while true do
+    while not Config.UseTarget do
         Citizen.Wait(0)
         local player = PlayerPedId()
         local playerCoords = GetEntityCoords(player)
