@@ -1,5 +1,8 @@
 Config = {}
 
+-- Specify the framework for the script or leave blank ('') if you are using this as a standalone system
+Config.Framework = 'ESX'
+
 -- If you want to use a targetting system, set this to true, this will make you be able to interact with the ped (ox_target only)
 Config.UseTarget = false
 
