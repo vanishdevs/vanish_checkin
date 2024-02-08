@@ -3,7 +3,8 @@ game 'gta5'
 lua54 'yes'
 
 author 'vanishdev'
-description 'Simple ESX Check-in system to revive players'
+description 'Check-in system to revive players'
+version '1.1.0'
 
 client_script 'client.lua'
 server_script 'server.lua'
