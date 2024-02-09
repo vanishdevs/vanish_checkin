@@ -10,7 +10,7 @@ local function CheckVersion()
         lib.print.info(('Current Version: %s'):format(currentVersion))
         lib.print.info(('Latest Version: %s'):format(text))
 
-        if text == currentVersion then
+        if string.gsub(text, "%s+", "") == string.gsub(currentVersion, "%s+", "") then
             lib.print.info('You are running the latest version.')
         else
             lib.print.error(('You are currently running an outdated version, please update to version %s'):format(text))
@@ -46,7 +46,7 @@ AddEventHandler('vanishdev:recievetreatment', function(price)
             end
         end
     else
-        TriggerClientEvent('vanishdev:standalonerevive', _source, Config.standalonerespawn)
+        TriggerClientEvent('vanishdev:standalonerevive', _source)
         ShowNotification("You have been treated.", Config.notificationType)
     end
 end)
