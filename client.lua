@@ -1,5 +1,6 @@
 RegisterNetEvent('vanishdev:standalonerevive')
-AddEventHandler('vanishdev:standalonerevive', function(player, specifiedCoords)
+AddEventHandler('vanishdev:standalonerevive', function(player)
+	local specifiedCoords = Config.standalonerespawn
 	SetEntityCoordsNoOffset(player, specifiedCoords.x, specifiedCoords.y, specifiedCoords.z, false, false, false, true)
 	NetworkResurrectLocalPlayer(specifiedCoords.x, specifiedCoords.y, specifiedCoords.z, specifiedCoords.w, true, false) 
 	SetPlayerInvincible(player, false) 
