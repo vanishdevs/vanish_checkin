@@ -8,13 +8,14 @@ AddEventHandler('vanishdev:standalonerevive', function(player)
 	ClearPedBloodDamage(player)
 end)
 
+-- @param text string?
 function ShowInfo(text)
     SetTextComponentFormat("STRING")
     AddTextComponentString(text)
     DisplayHelpTextFromStringLabel(0, 0, 1, -1)
 end
 
-Citizen.CreateThread(function()
+CreateThread(function()
     local textVisible = false
     local pedModel = `s_m_m_doctor_01`
         
@@ -32,7 +33,7 @@ Citizen.CreateThread(function()
         if Config.UseTarget then
             local options = {
                 {
-                    label = 'Check-in',
+                    label = 'Recieve Treatment',
                     icon = 'fa-regular fa-hospital',
                     distance = 3.0,
                     onSelect = function()
