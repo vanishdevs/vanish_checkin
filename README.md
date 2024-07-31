@@ -1,6 +1,8 @@
 # Check-in Script
-
-## Description
+![](https://img.shields.io/github/downloads/vanishdevs/vanish_checkin/total?logo=github)
+![](https://img.shields.io/github/downloads/vanishdevs/vanish_checkin/latest/total?logo=github)
+![](https://img.shields.io/github/contributors/vanishdevs/vanish_checkin?logo=github)
+![](https://img.shields.io/github/v/release/vanishdevs/vanish_checkin?logo=github)
 
 This script adds a medical treatment functionality to your FiveM server, allowing players to receive treatment from a designated NPC at a specified location. Players can interact with the NPC, pay a treatment cost, and get revived if needed.
 
