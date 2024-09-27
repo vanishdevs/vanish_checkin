@@ -1,0 +1,4 @@
+{
+    "revive_complete": "You received treatment for $%s",
+    "revive_incomplete": "Revive failed, insufficient funds"
+}

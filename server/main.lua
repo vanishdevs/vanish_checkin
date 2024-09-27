@@ -27,10 +27,10 @@ RegisterNetEvent('vanishdev:server:recieveTreatment', function(showNotifications
                 Config.reviveEventTrigger()
 
                 if showNotifications then
-                    ShowNotification('You received treatment for $' .. treatmentCost, source)
+                    ShowNotification(locale('revive_complete', treatmentCost), source)
                 end
             else
-                ShowNotification('Insufficient funds.', source)
+                ShowNotification(locale('revive_incomplete'), source)
             end
         end
     else
