@@ -1,22 +1,4 @@
-local function CheckVersion()
-    PerformHttpRequest('https://raw.githubusercontent.com/2zVanish/vanish-checkin/main/version.txt', function(err, text, headers)
-        local currentVersion = GetResourceMetadata(GetCurrentResourceName(), 'version')
-
-        if not text then
-            lib.print.error('Currently unable to run a version check.')
-            return
-        end
-
-        lib.print.info(('Current Version: %s'):format(currentVersion))
-        lib.print.info(('Latest Version: %s'):format(text))
-
-        if string.gsub(text, "%s+", "") == string.gsub(currentVersion, "%s+", "") then
-            lib.print.info('You are running the latest version.')
-        else
-            lib.print.error(('You are currently running an outdated version, please update to version %s'):format(text))
-        end
-    end)
-end
+lib.versionCheck('vanishdevs/vanish_checkin')
 
 RegisterServerEvent('vanishdev:recievetreatment')
 AddEventHandler('vanishdev:recievetreatment', function(price)
@@ -50,5 +32,3 @@ AddEventHandler('vanishdev:recievetreatment', function(price)
         ShowNotification("You have been treated.", Config.notificationType)
     end
 end)
-
-CheckVersion()
