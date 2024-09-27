@@ -15,26 +15,25 @@ lib.callback.register('vanishdev:server:emsCount', function()
     return emsCount
 end)
 
-RegisterServerEvent('vanishdev:recievetreatment')
-AddEventHandler('vanishdev:recievetreatment', function(price)
-    local _source = source
+RegisterNetEvent('vanishdev:server:recieveTreatment', function(showNotifications, treatmentCost)
+    local source = source
 
     if Config.Framework == 'ESX' then
-        local xPlayer = ESX.GetPlayerFromId(_source)
-    
-        if amount > Config.EMSAvailability then
-            ShowNotification("There is EMS online, you cannot check in.", Config.notificationType)
-        else
-            if xPlayer.getAccount('bank').money >= price then
-                xPlayer.removeAccountMoney('bank', price)
-                ShowNotification("Amount Paid: $" .. price, Config.notificationType)
-                TriggerClientEvent('esx_ambulancejob:revive', _source) -- or add your own trigger for reviving players
+        local xPlayer = ESX.GetPlayerFromId(source)
+
+        if xPlayer then
+            if xPlayer.getAccount('bank').money >= treatmentCost then
+                xPlayer.removeAccountMoney('bank', treatmentCost)
+                Config.reviveEventTrigger()
+
+                if showNotifications then
+                    ShowNotification('You received treatment for $' .. treatmentCost, source)
+                end
             else
-                ShowNotification("Not enough money: $" .. price, Config.notificationType)
+                ShowNotification('Insufficient funds.', source)
             end
         end
     else
-        TriggerClientEvent('vanishdev:standalonerevive', _source)
-        ShowNotification("You have been treated.", Config.notificationType)
+        -- Add your own logic for reviving here if needed
     end
 end)
