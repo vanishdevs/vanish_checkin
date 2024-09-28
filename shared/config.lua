@@ -3,7 +3,6 @@ return {
 
     Framework = 'ESX',
     UseTarget = true,
-    ShowNotifications = true,
 
     PedSettings = {
         model = 's_m_m_doctor_01',

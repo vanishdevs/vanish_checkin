@@ -15,7 +15,7 @@ lib.callback.register('vanishdev:server:emsCount', function()
     return emsCount
 end)
 
-RegisterNetEvent('vanishdev:server:recieveTreatment', function(showNotifications, treatmentCost)
+RegisterNetEvent('vanishdev:server:recieveTreatment', function(treatmentCost)
     local source = source
 
     if Config.Framework == 'ESX' then
@@ -26,9 +26,7 @@ RegisterNetEvent('vanishdev:server:recieveTreatment', function(showNotifications
                 xPlayer.removeAccountMoney('bank', treatmentCost)
                 Config.reviveEventTrigger(source)
 
-                if showNotifications then
-                    ShowNotification(locale('revive_complete', treatmentCost), source)
-                end
+                ShowNotification(locale('revive_complete', treatmentCost), source)
             else
                 ShowNotification(locale('revive_incomplete'), source)
             end
