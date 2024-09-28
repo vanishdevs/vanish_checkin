@@ -49,7 +49,7 @@ jobs:
         run: |
           mkdir -p ./temp/vanish_checkin
           cp ./{LICENSE,README.md,fxmanifest.lua} ./temp/vanish_checkin
-          cp -r ./{client,server,shared} ./temp/vanish_checkin
+          cp -r ./{client,locales,server,shared} ./temp/vanish_checkin
           cd ./temp && zip -r ../vanish_checkin.zip ./vanish_checkin
 
       - name: Create Release
