@@ -1,4 +1,6 @@
 {
+    "treatment_not_needed": "You do not need treatment",
     "revive_complete": "You received treatment for $%s",
-    "revive_incomplete": "Revive failed, insufficient funds"
+    "revive_incomplete": "Revive failed, insufficient funds",
+    "ems_not_enough": "There is not enough EMS online for this treatment. Please try again later."
 }

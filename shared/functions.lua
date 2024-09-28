@@ -1,3 +1,5 @@
+Config = lib.load('shared.config')
+
 -- @param debugPrint (string, number, table, etc) The message to print.
 function Debug(debugPrint)
     local getSettings = lib.load('shared.config')

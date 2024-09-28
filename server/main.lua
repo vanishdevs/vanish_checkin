@@ -34,6 +34,6 @@ RegisterNetEvent('vanishdev:server:recieveTreatment', function(showNotifications
             end
         end
     else
-        -- Add your own logic for reviving here if needed
+        -- Add your own logic for your framework if needed, I will add a bridge for this in an update
     end
 end)
