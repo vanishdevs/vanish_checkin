@@ -22,7 +22,7 @@ if not Config.UseTarget then
                     local emsCount = lib.callback.await('vanishdevs:server:emsCount', false)
 
                     if emsCount >= Config.requireEMS then
-                    TriggerServerEvent('vanishdev:server:recieveTreatment', Config.ShowNotifications, Config.treatmentCost)
+                        TriggerServerEvent('vanishdev:server:recieveTreatment', Config.ShowNotifications, Config.treatmentCost)
                     else
                         ShowNotification(locale('ems_not_enough'))
                     end
@@ -59,7 +59,7 @@ local function createPedTreatement()
                     
                     if playerHealth < 200 then
                         if emsCount >= Config.requireEMS then
-                            TriggerServerEvent('vanishdev:recievetreatment', Config.treatmentCost)
+                            TriggerServerEvent('vanishdev:server:recieveTreatment', Config.treatmentCost)
                         else
                             ShowNotification(locale('ems_not_enough'))
                         end
