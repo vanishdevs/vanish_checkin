@@ -24,7 +24,7 @@ RegisterNetEvent('vanishdev:server:recieveTreatment', function(showNotifications
         if xPlayer then
             if xPlayer.getAccount('bank').money >= treatmentCost then
                 xPlayer.removeAccountMoney('bank', treatmentCost)
-                Config.reviveEventTrigger()
+                Config.reviveEventTrigger(source)
 
                 if showNotifications then
                     ShowNotification(locale('revive_complete', treatmentCost), source)
