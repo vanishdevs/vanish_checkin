@@ -35,38 +35,41 @@ if not Config.UseTarget then
 end
 
 local function createPedTreatement()
-    lib.requestModel(Config.pedModel)
+    if not Config.UseTarget then return end
 
-    for _, coords in pairs(Config.location) do
+    local pedModel = Config.PedSettings.model
+
+    lib.requestModel(pedModel)
+
+    for _, coords in pairs(Config.PedSettings.locations) do
         local ped = CreatePed(4, pedModel, coords.x, coords.y, coords.z - 1, coords.w, false, true)
         FreezeEntityPosition(ped, true)
         SetEntityInvincible(ped, true)
         SetBlockingOfNonTemporaryEvents(ped, true)
-        if Config.UseTarget then
-            local options = {
-                {
-                    label = 'Recieve Treatment',
-                    icon = 'fa-regular fa-hospital',
-                    distance = 3.0,
-                    onSelect = function()
-                        local playerPed = cache.ped
-                        local playerHealth = GetEntityHealth(playerPed)
-                        local emsCount = lib.callback.await('vanishdevs:server:emsCount', false)
-                        
-                        if playerHealth < 200 then
-                            if emsCount >= Config.requireEMS then
-                                TriggerServerEvent('vanishdev:recievetreatment', Config.treatmentCost)
-                            else
-                                ShowNotification(locale('ems_not_enough'))
-                            end
+
+        local options = {
+            {
+                label = 'Recieve Treatment',
+                icon = 'fa-regular fa-hospital',
+                distance = 3.0,
+                onSelect = function()
+                    local playerPed = cache.ped
+                    local playerHealth = GetEntityHealth(playerPed)
+                    local emsCount = lib.callback.await('vanishdevs:server:emsCount', false)
+                    
+                    if playerHealth < 200 then
+                        if emsCount >= Config.requireEMS then
+                            TriggerServerEvent('vanishdev:recievetreatment', Config.treatmentCost)
                         else
-                            ShowNotification(locale('treatment_not_needed'))
+                            ShowNotification(locale('ems_not_enough'))
                         end
+                    else
+                        ShowNotification(locale('treatment_not_needed'))
                     end
-                },
-            }
-            exports.ox_target:addLocalEntity(ped, options)
-        end
+                end
+            },
+        }
+        exports.ox_target:addLocalEntity(ped, options)
     end
 end
 
