@@ -2,13 +2,15 @@ local zonePoint
 
 if not Config.UseTarget then
     for _, coords in pairs(Config.PedSettings.locations) do
-        zonePoint = lib.points.new(coords, 1.5)
+        zonePoint = lib.points.new(coords, 4.0)
 
         function zonePoint:onEnter()
+            Debug('Entered treatment zone')
             lib.showTextUI('Press ~INPUT_VEH_HORN~ to be treated ~r~(~h~~g~$%s~r~)'):format(Config.treatmentCost)
         end
 
         function zonePoint:onExit()
+            Debug('Exited treatment zone')
             lib.hideTextUI()
         end
 
