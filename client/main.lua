@@ -6,7 +6,7 @@ if not Config.UseTarget then
 
         function zonePoint:onEnter()
             Debug('Entered treatment zone')
-            lib.showTextUI('Press ~INPUT_VEH_HORN~ to be treated ~r~(~h~~g~$%s~r~)'):format(Config.treatmentCost)
+            lib.showTextUI(locale('textui_text', Config.treatmentCost))
         end
 
         function zonePoint:onExit()
@@ -15,14 +15,14 @@ if not Config.UseTarget then
         end
 
         function zonePoint:nearby()
-            DrawMarker(2, self.coords, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.1, 0.05, 255, 0, 0, 255, false, false, 2, false, nil, nil, false)
+            DrawMarker(2, self.coords, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.4, 0.4, 0.4, 255, 0, 0, 255, false, false, 2, false, nil, nil, false)
 
             if IsControlJustPressed(1, 38) then
-                if GetEntityHealth(self.id) < 200 then
+                if GetEntityHealth(cache.ped) < 200 then
                     local emsCount = lib.callback.await('vanishdev:server:emsCount', false)
 
                     if emsCount >= Config.requireEMS then
-                        TriggerServerEvent('vanishdev:server:recieveTreatment', Config.ShowNotifications, Config.treatmentCost)
+                        TriggerServerEvent('vanishdev:server:recieveTreatment', Config.treatmentCost)
                     else
                         ShowNotification(locale('ems_not_enough'))
                     end
@@ -70,6 +70,8 @@ local function createPedTreatement()
             },
         }
         exports.ox_target:addLocalEntity(ped, options)
+
+        Debug('Created treatment ped & added options')
     end
 end
 

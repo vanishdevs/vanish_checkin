@@ -2,7 +2,7 @@ return {
     Debug = true,
 
     Framework = 'ESX',
-    UseTarget = true,
+    UseTarget = false,
 
     PedSettings = {
         model = 's_m_m_doctor_01',
@@ -12,7 +12,7 @@ return {
         }
     },
 
-    requireEMS = 3,
+    requireEMS = 0,
     treatmentCost = 250000,
 
     reviveEventTrigger = function(source)

@@ -1,4 +1,5 @@
 {
+    "textui_text": "Press [E] to be treated ($%s)",
     "treatment_not_needed": "You do not need treatment",
     "revive_complete": "You received treatment for $%s",
     "revive_incomplete": "Revive failed, insufficient funds",
