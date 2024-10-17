@@ -1,18 +1,18 @@
 return {
-    Debug = true,
+    Debug = false,
 
     Framework = 'ESX',
-    UseTarget = false,
+    UseTarget = true,
 
     PedSettings = {
         model = 's_m_m_doctor_01',
         locations = {
-            vector4(293.2893, -560.7271, 43.2677, 79.6240),
-
+            vector4(311.4203, -594.0041, 42.2841, 339.7307),
+            -- ...
         }
     },
 
-    requireEMS = 0,
+    requireEMS = 3,
     treatmentCost = 250000,
 
     reviveEventTrigger = function(source)
