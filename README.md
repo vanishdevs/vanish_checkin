@@ -8,7 +8,7 @@ This script adds a medical treatment functionality to your FiveM server, allowin
 
 ## Features
 
-- Fully integrated for the ESX framework
+- Choose to either use as a standalone or with a framework (ESX)
 - Configurable option to use this script via targeting (ox_target)
 - Configurable treatment location using vector4 coordinates.
 - Adjustable cost for treatment in the in-game currency.
@@ -26,14 +26,14 @@ This script adds a medical treatment functionality to your FiveM server, allowin
 
 The script is customizable through the `config.lua` file. Adjust the following parameters to suit your server:
 
-- `Debug`: Whether to debug the system to see where it fails or not.
-- `Framework`: Specify the framework for the script.
+- `Framework`: Specify the framework for the script or leave blank ('') if you are using this as a standalone system.
 - `UseTarget`: If you want to use a targeting system, set this to true. This enables interaction with the ped (ox_target only).
-- `PedSettings`: Edit the model and other soon to come features about the ped.
-- `locations`: The locations where the ped or zone is spawned for interaction, using vector4 for coordinates. Add more coordinates as needed, ensuring proper syntax.
-- `requireEMS`: The amount of medics/EMS that must be online for this system to work.
+- `location`: The locations where the ped is spawned for interaction, using vector4 for coordinates. Add more coordinates as needed, ensuring proper syntax.
+- `standalonerespawn`: If you choose to make this script standalone, define where you want to respawn when you receive treatment (ignore if you are using a framework).
+- `EMSAvailability`: The amount of medics/EMS that must be online for this system to work.
 - `treatmentCost`: Cost of treatment in in-game currency (e.g., dollars).
-- `reviveEventTrigger`: Trigger your specified event to revive the player here.
+- `notificationType`: Type of notification system used for displaying messages (e.g., "esx", "chat", etc.).
+
 
 ## Usage
 
@@ -46,9 +46,9 @@ The script supports different notification systems. Customize the `ShowNotificat
 ## Credits
 
 - [ESX Framework](https://github.com/esx-framework/esx_core): Used for player-related functions.
-- [ox_lib](https://github.com/overextended/ox_lib): Used for library related calls.
-- [ox_target](https://github.com/overextended/ox_target): Used for ped interaction.
+- [OX LIB](https://github.com/overextended/ox_lib): Used for library related calls.
+- [OX Target](https://github.com/overextended/ox_target): Used for ped interaction.
 
 ## License
 
-This script is released under the [GPL-3.0 License](LICENSE.md).
+This script is released under the [MIT License](LICENSE.md).
