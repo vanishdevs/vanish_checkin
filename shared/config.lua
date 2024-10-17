@@ -7,7 +7,7 @@ return {
     PedSettings = {
         model = 's_m_m_doctor_01',
         locations = {
-            vector4(311.4203, -594.0041, 42.2841, 339.7307),
+            vector4(293.2893, -560.7271, 43.2677, 79.6240),
 
         }
     },

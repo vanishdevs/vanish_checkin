@@ -55,8 +55,8 @@ local function createPedTreatement()
                 onSelect = function()
                     local playerPed = cache.ped
                     local playerHealth = GetEntityHealth(playerPed)
-                    local emsCount = lib.callback.await('vanishdevs:server:emsCount', false)
-                    
+                    local emsCount = lib.callback.await('vanishdev:server:emsCount', false)
+
                     if playerHealth < 200 then
                         if emsCount >= Config.requireEMS then
                             TriggerServerEvent('vanishdev:server:recieveTreatment', Config.treatmentCost)
