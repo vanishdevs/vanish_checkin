@@ -19,7 +19,7 @@ if not Config.UseTarget then
 
             if IsControlJustPressed(1, 38) then
                 if GetEntityHealth(self.id) < 200 then
-                    local emsCount = lib.callback.await('vanishdevs:server:emsCount', false)
+                    local emsCount = lib.callback.await('vanishdev:server:emsCount', false)
 
                     if emsCount >= Config.requireEMS then
                         TriggerServerEvent('vanishdev:server:recieveTreatment', Config.ShowNotifications, Config.treatmentCost)
