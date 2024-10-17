@@ -1,7 +1,7 @@
 local zonePoint
 
 if not Config.UseTarget then
-    for _, coords in pairs(Config.PedSettings.locations) do
+    for _, coords in pairs(Config.locations) do
         zonePoint = lib.points.new(coords, 4.0)
 
         function zonePoint:onEnter()
@@ -41,7 +41,7 @@ local function createPedTreatement()
 
     lib.requestModel(pedModel)
 
-    for _, coords in pairs(Config.PedSettings.locations) do
+    for _, coords in pairs(Config.locations) do
         local ped = CreatePed(4, pedModel, coords.x, coords.y, coords.z - 1, coords.w, false, true)
         FreezeEntityPosition(ped, true)
         SetEntityInvincible(ped, true)
