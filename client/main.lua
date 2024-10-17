@@ -27,7 +27,7 @@ if not Config.UseTarget then
                         ShowNotification(locale('ems_not_enough'))
                     end
                 else
-                    ShowNotification(locale('treatment_not_needed''))
+                    ShowNotification(locale('treatment_not_needed'))
                 end
             end
         end
