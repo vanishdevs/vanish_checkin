@@ -11,7 +11,7 @@ return {
     locations = {
         vector4(311.4203, -594.0041, 42.2841, 339.7307),
         -- ...
-    }
+    },
 
     requireEMS = 3,
     treatmentCost = 250000,
